@@ -11,19 +11,27 @@ module.exports = {
     parser: '@babel/eslint-parser',
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'warn',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'warn',
     'linebreak-style': 0,
-    'indent': 'ignoredNodes',
-    'overrides': [
-      {
-        'rules': {
-          'comma-spacing': 'off',
-          "no-unused-expressions": "off",
-          'semi': 'off',
-          'comma-dangle': 'off'
-        }
-      }
-    ]
+    'comma-spacing': 'off',
+    "no-unused-expressions": "warn",
+    'comma-dangle': 'off',
+    'indent': 'off',
+    'quotes': 'warn',
+    'quote-props': 'warn',
+    'semi': 'warn',
+    'max-len': 'off',
+    'vuejs-accessibility/form-control-has-label': 'warn',
+    // 'overrides': [
+    //   {
+    //     'rules': {
+    //       'comma-spacing': 'off',
+    //       "no-unused-expressions": "off",
+    //       /* 'semi': 'off', */
+    //       'comma-dangle': 'off'
+    //     }
+    //   }
+    // ]
   },
 };
