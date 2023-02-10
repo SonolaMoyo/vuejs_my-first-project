@@ -18,11 +18,11 @@ module.exports = {
     "no-unused-expressions": "warn",
     'comma-dangle': 'off',
     'indent': 'off',
-    'quotes': 'warn',
+    'quotes': 'off',
     'quote-props': 'warn',
     'semi': 'warn',
     'max-len': 'off',
-    'vuejs-accessibility/form-control-has-label': 'warn',
+    'vuejs-accessibility/form-control-has-label': 'off',
     // 'overrides': [
     //   {
     //     'rules': {
