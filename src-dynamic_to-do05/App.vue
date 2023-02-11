@@ -7,14 +7,8 @@
         <div class="container">
           <h2>My Tasks</h2>
           <ul class="taskList">
-            <li v-for="(taskItem, index) in displayList" :key="`${index}_${Math.random()}`">
-              <input
-                type="checkbox"
-                name=""
-                id=""
-                :checked="!!taskItem.finishedAt"
-                @input="changeStatus(index)"
-              />
+            <li v-for="(taskItem, index) in taskList" :key="`${index}_${Math.random()}`">
+              <input type="checkbox" name="" id="" :checked='!!taskItem.finishedAt' @input="changeStatus(index)">
               {{ taskItem.task }}
               <span v-if="taskItem.finishedAt">
                 {{ taskItem.finishedAt }}
@@ -40,11 +34,6 @@ export default {
   data: () => ({
     taskList: [],
   }),
-  computed: {
-    displayList() {
-      return this.taskList;
-    },
-  },
   methods: {
     addNewTask(task) {
       this.taskList.push({
@@ -60,7 +49,7 @@ export default {
       } else {
         task.finishedAt = Date.now();
       }
-    },
+    }
   },
 };
 </script>
