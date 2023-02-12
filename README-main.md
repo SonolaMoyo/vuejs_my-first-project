@@ -11,3 +11,4 @@ Different src is created for each Recipe. The Recipe list is:
 - filtersorters for list08
 - Conditional filters09
 - Custom Styles and Transitions10
+- Using vue-devtools11
