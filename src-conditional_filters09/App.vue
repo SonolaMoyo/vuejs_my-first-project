@@ -6,6 +6,18 @@
       <div class="cardBox">
         <div class="container">
           <h2>My Tasks</h2>
+          <div class="col-4">
+            <input type="checkbox" name="hideDone" id="hideDone" v-model="hideDone">
+            <label for="hideDone">Hide Done Tasks</label>
+          </div>
+          <div class="col-4">
+            <input type="checkbox" name="reverse" id="reverse" v-model="reverse">
+            <label for="reverse">Reverse Order</label>
+          </div>
+          <div class="col-4">
+            <input type="checkbox" name="sortById" id="sortById" v-model="sortById">
+            <label for="sortById">Sort By Id</label>
+          </div>
           <ul class="taskList">
             <li v-for="(taskItem, index) in displayList" :key="`${index}_${Math.random()}`">
               <input
@@ -15,7 +27,7 @@
                 :checked="!!taskItem.finishedAt"
                 @input="changeStatus(taskItem.id)"
               />
-              #{{taskItem.id}} - {{ taskItem.task }}
+              #{{ taskItem.id }} - {{ taskItem.task }}
               <span v-if="taskItem.finishedAt">
                 Done at: {{ formatDate(taskItem.finishedAt) }}
               </span>
@@ -39,6 +51,9 @@ export default {
   },
   data: () => ({
     taskList: [],
+    hideDone: false,
+    reverse: false,
+    sortById: false,
   }),
   computed: {
     baseList() {
@@ -48,13 +63,19 @@ export default {
       }));
     },
     filteredList() {
-      return [...this.baseList].filter((t) => !t.finishedAt);
+      return this.hideDone ? [...this.baseList].filter((t) => !t.finishedAt) : [...this.baseList];
     },
     sortedList() {
-      return [...this.filteredList].sort((a,b) => b.id - a.id);
+      let result = [...this.filteredList];
+      if (this.sortedList) {
+        result = [...this.filteredList].sort((a, b) => b.id - a.id);
+      }
+      return result;
     },
     displayList() {
-      return this.sortedList;
+      const taskList = [...this.sortedList];
+
+      return this.reverse ? taskList.reverse() : taskList;
     },
   },
   methods: {
@@ -62,7 +83,8 @@ export default {
       if (!value) return "";
       if (typeof value !== "number") return value;
 
-      const browserLocale = navigator.languages && navigator.languages.length
+      const browserLocale =
+        navigator.languages && navigator.languages.length
           ? navigator.languages[0]
           : navigator.language;
       const intlDateTime = new Intl.DateTimeFormat(browserLocale, {

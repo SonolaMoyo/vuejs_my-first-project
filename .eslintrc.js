@@ -17,12 +17,14 @@ module.exports = {
     'comma-spacing': 'off',
     "no-unused-expressions": "warn",
     'comma-dangle': 'off',
-    'indent': 'off',
-    'quotes': 'off',
+    indent: 'off',
+    quotes: 'off',
     'quote-props': 'warn',
-    'semi': 'warn',
+    semi: 'warn',
     'max-len': 'off',
     'vuejs-accessibility/form-control-has-label': 'off',
+    'operator-linebreak': 'off',
+    'vuejs-accessibility/label-has-for': 'off',
     // 'overrides': [
     //   {
     //     'rules': {
