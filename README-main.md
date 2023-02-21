@@ -1,5 +1,6 @@
 ## This repo contains practise code from the book "Building Vue.js Applications with GraphQL"
 Different src is created for each Recipe. The Recipe list is:
+Section1:
 - Create first project00
 - Hello world component01
 - Input form data binding02
@@ -12,3 +13,5 @@ Different src is created for each Recipe. The Recipe list is:
 - Conditional filters09
 - Custom Styles and Transitions10
 - Using vue-devtools11
+Section2, Components, Mixins and Functional Components
+- Visual Template Component
