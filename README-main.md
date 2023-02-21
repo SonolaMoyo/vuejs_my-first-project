@@ -14,4 +14,5 @@ Section1:
 - Custom Styles and Transitions10
 - Using vue-devtools11
 Section2, Components, Mixins and Functional Components
-- Visual Template Component
+- Visual Template Component12
+- named slots to plate data13
