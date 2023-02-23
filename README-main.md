@@ -15,4 +15,5 @@ Section1:
 - Using vue-devtools11
 Section2, Components, Mixins and Functional Components
 - Visual Template Component12
-- named slots to plate data13
+- named slots to place data13
+- Pass and validate data14
