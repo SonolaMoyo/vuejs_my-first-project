@@ -1,4 +1,6 @@
-# my-first-project
+# To run my-first-project
+
+## Rename your target folder to `src`
 
 ## Project setup
 ```
@@ -19,6 +21,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
