@@ -17,3 +17,4 @@ Section2, Components, Mixins and Functional Components
 - Visual Template Component12
 - named slots to place data13
 - Pass and validate data14 (incomplete)
+- Creating functional components15
